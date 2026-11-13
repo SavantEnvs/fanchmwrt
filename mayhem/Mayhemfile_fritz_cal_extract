@@ -1,0 +1,9 @@
+project: savantenvs/fanchmwrt
+target: fritz_cal_extract
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fritz_cal_extract/testsuite
+cmds:
+  - cmd: /mayhem/fritz_cal_extract -e 2 -s 4 -i 2 -l 64 -r @@
+    afl: true
+    timeout: 5

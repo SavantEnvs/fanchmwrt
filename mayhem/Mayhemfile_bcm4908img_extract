@@ -1,0 +1,10 @@
+project: savantenvs/fanchmwrt
+target: bcm4908img_extract
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/bcm4908img_extract/testsuite
+cmds:
+  - cmd: /mayhem/bcm4908img extract -t firmware -i @@
+    afl: true
+    timeout: 5
+    max_length: 524288

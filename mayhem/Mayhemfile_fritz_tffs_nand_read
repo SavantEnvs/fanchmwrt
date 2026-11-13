@@ -1,0 +1,10 @@
+project: savantenvs/fanchmwrt
+target: fritz_tffs_nand_read
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fritz_tffs_nand_read/testsuite
+cmds:
+  - cmd: /mayhem/fritz_tffs_nand_read -a -o -d @@
+    afl: true
+    timeout: 5
+    max_length: 65536

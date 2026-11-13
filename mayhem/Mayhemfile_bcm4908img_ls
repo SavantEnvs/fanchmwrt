@@ -1,0 +1,10 @@
+project: savantenvs/fanchmwrt
+target: bcm4908img_ls
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/bcm4908img_ls/testsuite
+cmds:
+  - cmd: /mayhem/bcm4908img bootfs -i @@ ls
+    afl: true
+    timeout: 5
+    max_length: 524288
